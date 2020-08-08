@@ -9,6 +9,14 @@ namespace Player
         public Vector2 MovementDirection { get; private set; }
         public float MovementSpeed { get; private set; }
 
+        public Player(string name, int age)
+        {
+            Name = name;
+            Age = age;
+            MovementDirection = new Vector2(0, 0);
+            MovementSpeed = 0;
+        }
+
         public void Move()
         {
             //Do move: F(MovementDirection, MovementSpeed);
