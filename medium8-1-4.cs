@@ -2,7 +2,7 @@ using System;
 
 namespace Player
 {
-    class Player
+    public class Player
     {
         public string Name { get; private set; }
         public int Age { get; private set; }
