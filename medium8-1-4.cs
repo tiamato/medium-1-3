@@ -11,20 +11,21 @@ namespace Player
 
         public void Move()
         {
-            //Do move: F(MovementDirection, MovementSpeed)
+            //Do move: F(MovementDirection, MovementSpeed);
+            throw new NotImplementedException();
         }
 
         public void Attack()
         {
-            //attack: Weapon.Fire();...
+            //attack: Weapon[x].Fire();...
+            throw new NotImplementedException();
         }
-
     }
 
     internal class Vector2
     {
-        public float X { get; private set; }
-        public float Y { get; private set; }
+        public float X { get; }
+        public float Y { get; }
         public Vector2(float x, float y)
         {
             X = x;
@@ -45,11 +46,13 @@ namespace Player
 
         public bool IsReloading()
         {
+            // Currently is in reloading process
             throw new NotImplementedException();
         }
 
         public void Fire()
         {
+            // Fire: F(Damage, ...)
             throw new NotImplementedException();
         }
     }
