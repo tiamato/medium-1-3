@@ -30,7 +30,7 @@ namespace Player
         }
     }
 
-    internal class Vector2
+    public class Vector2
     {
         public float X { get; }
         public float Y { get; }
@@ -41,7 +41,7 @@ namespace Player
         }
     }
 
-    internal class Weapon
+    public class Weapon
     {
         public float Cooldown { get; }
         public int Damage { get; }
