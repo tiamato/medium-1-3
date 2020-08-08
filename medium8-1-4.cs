@@ -1,25 +1,56 @@
-class Player
+using System;
+
+namespace Player
 {
-    public string Name { get; private set; }
-    public float WeaponCooldown { get; private set; }
-    public float MovementDirectionX { get; private set; }
-    public float MovementDirectionY { get; private set; }
-    public int Age { get; private set; }
-    public int WeaponDamage { get; private set; }
-    public float MovementSpeed { get; private set; }
-
-    public void Move()
+    class Player
     {
-        //Do move
+        public string Name { get; private set; }
+        public int Age { get; private set; }
+        public Vector2 MovementDirection { get; private set; }
+        public float MovementSpeed { get; private set; }
+
+        public void Move()
+        {
+            //Do move: F(MovementDirection, MovementSpeed)
+        }
+
+        public void Attack()
+        {
+            //attack: Weapon.Fire();...
+        }
+
     }
 
-    public void Attack()
+    internal class Vector2
     {
-        //attack
+        public float X { get; private set; }
+        public float Y { get; private set; }
+        public Vector2(float x, float y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 
-    public bool IsReloading()
+    internal class Weapon
     {
-        throw new NotImplementedException();
+        public float Cooldown { get; }
+        public int Damage { get; }
+
+        public Weapon(float cooldown, int damage)
+        {
+            Cooldown = cooldown;
+            Damage = damage;
+        }
+
+        public bool IsReloading()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Fire()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
