@@ -4,22 +4,20 @@ namespace Player
 {
     public class Player
     {
-        public string Name { get; private set; }
-        public int Age { get; private set; }
-        public Vector2 MovementDirection { get; private set; }
-        public float MovementSpeed { get; private set; }
+        public string Name { get; }
+        public int Age { get; }
+        public MovementParametersHolder MovementParameters { get; set; }
 
         public Player(string name, int age)
         {
             Name = name;
             Age = age;
-            MovementDirection = new Vector2(0, 0);
-            MovementSpeed = 0;
+            MovementParameters = new MovementParametersHolder(new Vector2(0, 0), 0);
         }
 
         public void Move()
         {
-            //Do move: F(MovementDirection, MovementSpeed);
+            //Do move: new position = F(position, movement parameters);
             throw new NotImplementedException();
         }
 
@@ -30,10 +28,24 @@ namespace Player
         }
     }
 
+    public class MovementParametersHolder
+    {
+        public Vector2 Direction { get; }
+        public float Speed { get; }
+
+        public MovementParametersHolder(Vector2 direction, float speed)
+        {
+            Direction = direction;
+            Speed = speed;
+        }
+    }
+
+
     public class Vector2
     {
         public float X { get; }
         public float Y { get; }
+
         public Vector2(float x, float y)
         {
             X = x;
