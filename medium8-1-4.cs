@@ -6,13 +6,13 @@ namespace Player
     {
         public string Name { get; }
         public int Age { get; }
-        public MovementParametersHolder MovementParameters { get; set; }
+        public MovementParameters MovementParameters { get; set; }
 
         public Player(string name, int age)
         {
             Name = name;
             Age = age;
-            MovementParameters = new MovementParametersHolder(new Vector2(0, 0), 0);
+            MovementParameters = new MovementParameters(new Vector2(0, 0), 0);
         }
 
         public void Move()
@@ -28,12 +28,12 @@ namespace Player
         }
     }
 
-    public class MovementParametersHolder
+    public class MovementParameters
     {
         public Vector2 Direction { get; }
         public float Speed { get; }
 
-        public MovementParametersHolder(Vector2 direction, float speed)
+        public MovementParameters(Vector2 direction, float speed)
         {
             Direction = direction;
             Speed = speed;
